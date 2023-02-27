@@ -1,97 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waffles</title>
-    
-    <meta name="description" content="waffles">
-    <meta name="author" content="waffles">
-    <meta name="keywords" content="postres, waffles, comida">
-    <link rel="stylesheet" href="style.css">
-   
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
-<div>
-<header>
-<img src="imagenes/estilo14.png" alt=""> 
-<h1 style="color: red;">WAFFLES</h1>
-<h3 class="sub">MR. BUBBLE</h3>   
-</header>
-
-<img id="ima1" src="imagenes/alma.jpg" alt="">
-<section id="todo" id="todo1">
-<h3>Bebidas</h3>
-<li>$25.00</li>
-<li>Cafe frio (cafe con hielo)</li>  
-<li>Malteada</li>                   
-<li>Capuchino</li> 
-
-<h3>Helado</h3>    
-<li>Helado en canasta  $25.00</li>
-<li>Helado en cono     $12.00</li>    
-<li>Costo extra por ingrediente   $8.00</li>
-</section>
-
-<section id="todo">
-<img id="ima2" src="imagenes/alma2.jpg">
-</section>
-    
-
-<section id="todo3">
-<h3>Waffles</h3>
-<h4>ClASICO </h4>
-<li>$18.00</li>
-<li>(mermelada, lechera, nutella, cajeta)</li>
-<li>1 ingrediente a elegir</li>  
-</section>
-
-<section class="todo2">
-<h4>GOURMET DE OREO</h4>
-<li> $30.00</li>
-<li>(helado de galleta oreo, chispas de chocolate, waffer, chocolate)</li>
-</section>
-
-<section class="todo2">
-<h4>GOURMET NAPOLITANO</h4>
-<li>$30.00</li>
-<li>helado napolitano, chispas de chocolate, waffer, chocolate</li>
-</section>
-
-<div id="division">
-<section class="uno" id="crepas">
-<h3>Crepas</h3>    
-<article>    
-<h3>1 INGREDIENTE</h3> 
-<li>cajeta</li>
-<li>nutella</li>
-<li>chocolate Herhey´s</li>
-<li>lechera</li>
-<li>queso crema</li>
-<li>mermelada</li>
-</article>
-</section>
-
-<section class="uno" id="salada">
-<article>
-<h3>2 INGREDIENTES</h3>
-<h4>SALADA</h4>
-<li>jamon con queso</li>
-<li>machego</li>
-<li>jamon con queso crema</li>
-</article>
-</section>
 
 
-<article id="dulce">
-<h4>DULCE</h4>
-<li>nuttela con nuez</li>
-<li>cajeta con nuez</li>
-</article>
-</div>
 
 
-</div>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+          <form id="form-data" class="form-horizontal" action="" method="post">
+            <input type="hidden" id="Aseguradora_cliente_id" name="Aseguradora_cliente_id">
+            <div class="modal-header">						
+              <h4 class="modal-title"><?php echo $form_title; ?></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="alert alert-warning alert-dismissible fade show d-none" id="warning-alert"  role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <ul class="nav nav-tabs" id="tabs-three-tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="tabs-three-general-tab" data-toggle="pill" href="#tabs-three-general" role="tab" aria-controls="tabs-three-general" aria-selected="true">¿?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="tabs-three-datosnom1-tab" data-toggle="pill" href="#tabs-three-datosnom1" role="tab" aria-controls="tabs-three-datosnom1" aria-selected="false">¿?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="tabs-three-datosnom2-tab" data-toggle="pill" href="#tabs-three-datosnom2" role="tab" aria-controls="tabs-three-datosnom2" aria-selected="false">¿?</a>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="custom-tabs-three-tabContent">	
+                <div class="tab-pane fade show active" id="tabs-three-general" role="tabpanel" aria-labelledby="tabs-three-general-tab">
+                  
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="NombreCorto">Nombre Corto</label>
+                        <input class="form-control form-control-sm ucword" name="NombreCorto" id="NombreCorto">
+                      </div>
+                    </div>	
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label class="col-form-label" for="RazonSocial">Razon Social</label>
+                        <input class="form-control form-control-sm ucword" name="RazonSocial" id="RazonSocial">
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label class="col-form-label" for="RFC">RFC</label>
+                        <input class="form-control form-control-sm" name="RFC" id="RFC">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col-3">
+                      <div class="form-group">
+                        <label class="col-form-label" for="CP">Cp(*)</label>
+                        <input class="form-control form-control-sm" name="CP" id="CP">
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-group">
+                        <label class="col-form-label" for="PaisId">Pais(*)</label>
+                        <select class="custom-select custom-select-sm" name="PaisId" id="PaisId">
+                          <option value="">Selecciona un Valor</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-group">
+                        <label class="col-form-label" for="CdUsoCfdi">Uso Cfdi</label>
+                        <select class="custom-select custom-select-sm" name="CdUsoCfdi" id="CdUsoCfdi">
+                          <option value="">Selecciona un Valor</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-group">
+                        <label class="col-form-label" for="CdCfdiRegimen">Regimen Fiscal</label>
+                        <select class="custom-select custom-select-sm" name="CdCfdiRegimen" id="CdCfdiRegimen">
+                          <option value="">Selecciona un Valor</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col-3">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Aseguradora/Convenio</label>
+                        <select class="custom-select custom-select-sm" name="" id="">
+                          <option value="">Selecciona un Valor</option>
+                          <option value="1">Es Aseguradora</option>
+                          <option value="2">Es convenio</option>
+                          <option value="3">Los dos</option>												
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-3">
+                      <div class="form-group">
+                        <label class="col-form-label" for="FormaPagoCfdi">Metodo Pago Fijo</label>
+                        <select class="custom-select custom-select-sm" name="FormaPagoCfdi" id="FormaPagoCfdi">
+                          <option value="">Selecciona un Valor</option>
+                          <option value="PUE">PUE - Pago en una sola exhibicion</option>
+                          <option value="PPD">PPD - Pago en parcialidades o Diferido</option>												
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label class="col-form-label" for="CdUsoCfdiNcr">Uso Cfdi Ncr</label>
+                        <select class="custom-select custom-select-sm" name="CdUsoCfdiNcr" id="CdUsoCfdiNcr">
+                          <option value="">Selecciona un Valor</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="FormaPagoNcr">Metodo pago Ncr Cancela</label>
+                        <select class="custom-select custom-select-sm" name="FormaPagoNcr" id="FormaPagoNcr">
+                          <option value="">Selecciona un Valor</option>
+                          <option value="PUE">PUE - Pago en una sola exhibicion</option>
+                          <option value="PPD">PPD - Pago en parcialidades o Diferido</option>												
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row mt-2">	
+                    <div class="col-4">
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" name="Status" id="Status">
+                          <label class="custom-control-label" for="Status">Activo</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" name="CreditoActivo" id="CreditoActivo">
+                          <label class="custom-control-label" for="CreditoActivo">Tiene Credito</label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" name="EsAtc" id="EsAtc">
+                          <label class="custom-control-label" for="EsAtc">Axa ATC</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <!-- Menu 1 fin -->
+                <div class="tab-pane fade" id="tabs-three-datosnom1" role="tabpanel" aria-labelledby="tabs-three-datosnom1-tab">
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Calle">Calle</label>
+                        <input class="form-control form-control-sm" name="Calle" id="Calle">
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label class="col-form-label" for="NumExterior">Num. Ext.(*)</label>
+                        <input class="form-control form-control-sm" name="NumExterior" id="NumExterior">
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label class="col-form-label" for="NumInterior">Num. Int.</label>
+                        <input class="form-control form-control-sm" name="NumInterior" id="NumInterior">
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Colonia">Colonia(*)</label>
+                        <input class="form-control form-control-sm" name="Colonia" id="Colonia">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Localidad">Localidad(*)</label>
+                        <input class="form-control form-control-sm" name="Localidad" id="Localidad">
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Municipio">Municipio(*)</label>
+                        <input class="form-control form-control-sm" name="Municipio" id="Municipio">
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Estado">Estado(*)</label>
+                        <select class="custom-select custom-select-sm" name="Estado" id="Estado">
+                          <option value="">Selecciona un Valor</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Contacto1">Contacto 1</label>
+                        <input class="form-control form-control-sm" name="Contacto1" id="Contacto1">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Contacto2">Contacto 2</label>
+                        <input class="form-control form-control-sm" name="Contacto2" id="Contacto2">
+                      </div>
+                    </div>
+                  </div>
+                  <!--  -->
+                  <div class="row">	
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label class="col-form-label" for="Telefono1">Telefono 1(*)</label>
+                        <input class="form-control form-control-sm col" name="Telefono1" id="Telefono1">
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label type="tel" class="col-form-label" for="Telefono2">Telefono 2</label>
+                        <input type="tel" class="form-control form-control-sm col" name="Telefono2" id="Telefono2">
+                      </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="form-group">
+                        <label type="tel" class="col-form-label" for="TelefonoLocal1">Tel Local 1</label>
+                        <input type="tel" class="form-control form-control-sm col" name="TelefonoLocal1" id="TelefonoLocal1">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-group">
+                        <label type="email" class="col-form-label" for="Email1">Email 1(*)</label>
+                        <input type="email" class="form-control form-control-sm col" name="Email1" id="Email1">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col-5">
+                      <div class="form-group">
+                        <label type="email" class="col-form-label" for="Email2">Email 2</label>
+                        <input type="email" class="form-control form-control-sm col" name="Email2" id="Email2">
+                      </div>
+                    </div>
+                    <div class="col-7">
+                      <div class="form-group">
+                        <label type="tel" class="col-form-label" for="DireccionLocal">Direccion Local</label>
+                        <input type="tel" class="form-control form-control-sm col" name="DireccionLocal" id="DireccionLocal">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    
+                  </div>
+                </div>
+                <!-- Menu 2 fin -->
+                <div class="tab-pane fade" id="tabs-three-datosnom2" role="tabpanel" aria-labelledby="tabs-three-datosnom2-tab">				
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Factor(**)</label>
+                        <select class="custom-select custom-select-sm" name="" id="">
+                          <option value="">Selecciona un Valor</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                          <label class="col-form-label" for="">Lista Precio(**)</label>
+                          <select class="custom-select custom-select-sm" name="" id="">
+                            <option value="">Selecciona un Valor</option>
+                          </select>
+                        </div>
+                      </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Descuento</label>
+                        <input class="form-control form-control-sm col" name="" id="">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Precio de empresa</label>
+                        <select class="custom-select custom-select-sm" name="" id="">
+                          <option value="">Selecciona un Valor</optison>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Condicion credito</label>
+                        <select class="custom-select custom-select-sm" name="" id="">
+                          <option value="">Selecciona un Valor</optison>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Límite de Credito</label>
+                        <input class="form-control form-control-sm col" name="" id="">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="">Periodo Máximo</label>
+                        <input class="form-control form-control-sm col" name="" id="">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- row -->
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="CuentaContable2">Cuenta Contable 2</label>
+                        <input class="form-control form-control-sm col" name="CuentaContable2" id="CuentaContable2">
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label class="col-form-label" for="CdProvTerceros2">Codigo prov 2</label>
+                        <input class="form-control form-control-sm col" name="CdProvTerceros2" id="CdProvTerceros2">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- menu 3 fin -->
+              </div> 
+            </div>	
+            <div class="modal-footer">
+              <button type="button" name="button-save" id="button-save" class="btn btn-sm btn-primary">Guardar</button>
+              <button type="button" name="button-delete" id="button-delete" class="btn btn-sm btn-danger">Eliminar</button>
+              <button type="button" name="button-cancel" class="btn btn-sm btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>
